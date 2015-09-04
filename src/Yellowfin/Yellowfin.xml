@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="Yellowfin.widget.Yellowfin" needsEntityContext="false" xmlns="http://www.mendix.com/widget/1.0/">
+    <name>Yellowfin</name>
+    <description>The Yellowfin widget can be used to insert a Yellowfin dashboard or report into the project</description>
+
+    <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ bWFnZVJlYWR5ccllPAAAAm9JREFUeNqEU01IVFEU/t6bGcfGJq2RYkhKSKdFIGQxRRAR0q6kZuuq hWZY0SZa1EKhRQsTpEVZrVpUVgxGFETgLgorEdPsZ1FizJhJ1Py8N+/d+97p3DcK80Lr8i733HvO 953vnnOfRkRYaVi2QEADQqcmfQE0tEur3GurEUghPHAq1eo7T6fH/SSKYKWJrjd0eZLILuYoa/DB INGmu0TnJthm33JcEP8ZUhJOjgHHk8COGPDd8Pv1f4FjtRyg64jWAAcbgGNNQFujPybY9/AHrUYQ yX7F2GwGyS37UB8BKpMf6Jsh05TlK+xpXlNZZ0iXMNLYhKPdw7iZ7kLLRiDAaV7NAZ2pG+jZfg17 8/PoFU+g9T5YIEWQMyQcFx5YsmE7BCFdnL4w4lN1NtGP/p7PmPoAjE/Fywpcruahligevf6F9t21 CId0JYQ/QvJeB158zONwax2GXy5iZuAEJqaBREIRcI0sKb1M4aAGS7ge+PrzBWjc6SuPs2iIhZCI h7F5QxVqqnTcGnUwcBvovrhUxKIlUVIEIQ0d+2MI6hrUmepxwXLguqpGa5UglDhBoeQg3z6NeF0I 5+/PQS+YxM/Whclz8Ok8bCYzSq4HKHKww0TvZg18yhis0IF6Y6btMBnBtWzov00bJQYrRzkzOLNc 2isFhKvPMljMS0/BukgAQ53NEGyTRdDaLr2nIzvX49tPCzYfWqzAYnalRNlqFd7krnB3hFNu89b6 MEbvfEEwx8xKUrQ6AJvrUC00iDAHSV6lDuGSB3IYzDzc6rLa5X9Q23bmLZX4RZF3J3baylbyHEBd jYHenhV4Ff1r/BFgACiOjHWT8QsmAAAAAElFTkSuQmCC
+    </icon>
+
+    <properties>
+        <property key="contenttype" type="enumeration" defaultValue="Dashboard">
+            <caption>Content Type</caption>
+            <category>Behavior</category>
+            <description>Defines whether this widget connects with a dashboard or chart.
+            </description>
+            <enumerationValues>
+                <enumerationValue key="Dashboard">Dashboard</enumerationValue>
+                <enumerationValue key="Report">Report</enumerationValue>
+            </enumerationValues>
+        </property>
+		<property key="Height" type="integer" defaultValue="300" required="true">
+				<caption>Height</caption>
+				<category>Behavior</category>
+				<description>Height in pixels</description>
+        </property>
+		<property key="Width" type="integer" defaultValue="300" required="true">
+				<caption>Width</caption>
+				<category>Behavior</category>
+				<description>Width in pixels</description>
+        </property>		
+        <property key="documentation" type="string" multiline="true" required="false">
+            <caption>Documentation</caption>
+			<category>Behavior</category>
+            <description>Documentation of this widget. This should explain its purpose.</description>
+        </property>
+				<property key="BaseUrl" type="string" required="true">
+            <caption>Base-url</caption>
+			<category>Connection</category>
+            <description>The base-url of the location (example: http://localhost:8080/)</description>
+        </property>
+		<property key="ObjectId" type="string" required="true">
+            <caption>Object-id</caption>
+			<category>Connection</category>
+            <description>The id of the dashboard or report that you want to connect to (example: 9a31442d-d8a6-4aad-ad11-d342db606b64)</description>
+        </property>		
+		<property key="Account" type="entity">
+			<caption>Account </caption>
+			<category>Connection</category>
+			<description>The entity to use to login to Yellowfin.</description>
+		</property>
+		<property key="YellowfinUsername" type="attribute" entityProperty="Account">
+			<caption>YFUsername</caption>
+			<category>Connection</category>
+			<description>The attribute that specifies the Yellowfin username</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+		<property key="YellowfinPassword" type="attribute" entityProperty="Account">
+			<caption>YFPassword</caption>
+			<category>Connection</category>
+			<description>The attribute that specifies the Yellowfin password</description>
+				<attributeTypes>
+					<attributeType name="String"/>
+				</attributeTypes>
+			</property>
+    </properties>
+</widget>
+
